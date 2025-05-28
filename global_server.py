@@ -12,12 +12,40 @@ def handle_client(conn, addr):
         print(f"[Global] Requested: {filename}")
 
         if filename.lower() == "live":
-            cap = cv2.VideoCapture(0)  
+            cap = cv2.VideoCapture(0, cv2.CAP_DSHOW) 
             if not cap.isOpened():
                 print("[Global] Failed to open live stream.")
                 conn.close()
                 return
             print("[Global] Live streaming started.")
+
+            try:
+                while True:
+                    ret, frame = cap.read()
+                    if not ret:
+                        break
+
+                    success, buffer = cv2.imencode('.jpg', frame, [int(cv2.IMWRITE_JPEG_QUALITY), 80])
+                    if not success:
+                        continue
+                    data = buffer.tobytes()
+
+                    conn.sendall(struct.pack('>I', len(data)))
+                    conn.sendall(data)
+
+                    resized = cv2.resize(frame, (0, 0), fx=0.4, fy=0.4)
+                    cv2.imshow("Global Server Live", resized)
+                    if cv2.waitKey(30) == 27:
+                        break
+
+            except Exception as e:
+                print(f"[Global] Error during live stream: {e}")
+            finally:
+                cap.release()
+                conn.close()
+                cv2.destroyAllWindows()
+                print("[Global] Live stream ended.")
+
         else:
             video_path = os.path.join("videos", filename)
             if not os.path.exists(video_path):
