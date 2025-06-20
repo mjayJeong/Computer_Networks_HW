@@ -1,8 +1,6 @@
 # 📝 Computer Networks Homework Repository
 
-This repository contains the implementation and documentation for the Computer Networks (SWE3022_41) course homework assignments completed by **Minjae Jeong (2020312429)**.
-
-Each assignment explores fundamental networking concepts and involves practical programming exercises using different languages and protocols.
+This repository contains the implementation and documentation for the Computer Networks (SWE3022_41) course homework assignments.
 
 ---
 
