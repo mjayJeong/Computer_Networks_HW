@@ -27,3 +27,35 @@ Develop a simple client-server calculator using two different programming langua
 ## 📘 Homework 2: Multi-Client Expression & HTTP Server
 
 ### 🎯 Objective
+
+
+
+
+
+
+
+
+## 📘 Homework 5: Multi-client Video Streaming
+
+### 🎯 Objective
+Implement a real-time video streaming system using multi-client and multi-server architecture.
+
+### ✅ Requirements
+- Client1 streams cached video
+- Client2 triggers global server → local server → client flow
+- Frame-level streaming (e.g., JPEG)
+- Real-time display and saving of streamed video
+
+### 📂 File Structure
+Homework5/
+├── client1.cpp
+├── client2.py
+├── local_server.cpp
+├── global_server.java
+└── video_2025.mp4
+
+### 💻 How to Run
+```bash
+g++ local_server.cpp -o local.exe -lws2_32 && local.exe
+javac global_server.java && java global_server
+python client2.py
