@@ -24,4 +24,6 @@ Develop a simple client-server calculator using two different programming langua
   javac filename.java && java filename
 
 
-## Homework2 
+## 📘 Homework 2: Multi-Client Expression & HTTP Server
+
+### 🎯 Objective
