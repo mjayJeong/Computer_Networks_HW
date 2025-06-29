@@ -16,6 +16,7 @@ Develop a simple client-server calculator using two different programming langua
 - Evaluate expressions manually (no `eval()` or built-in cal  c libraries).
 - The client saves the expression and result in `result.txt`.
 
+---
 
 ## 📘 Homework 2: Multi-Client Expression & HTTP Server
 
@@ -33,6 +34,7 @@ Extend Homework 1 to support:
 - Save results to history.html.
 - If a requested file does not exist, server must return a proper 404 Not Found response.
 
+---
 
 ## 📘 Homework 4: DNS Simulation (Client, Local DNS, Global DNS)
 
@@ -50,6 +52,7 @@ Implement a simulation of the DNS resolution process with:
 - Use TCP between Local DNS ↔ Global DNS
 - Cache resolved domains in local DNS
 
+---
 
 ## 📘 Homework 5: Multi-client Video Streaming
 
